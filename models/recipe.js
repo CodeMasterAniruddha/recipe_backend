@@ -5,15 +5,15 @@ const recipeSchema = new mongoose.Schema({
         required: true
     },
     totalCookTime:{
-        type: Number,
+        type: String,
         required:true
     },
     prepTime:{
-        type: Number,
+        type: String,
         required:true
     },
     cookTime:{
-        type: Number,
+        type: String,
         required:true
     },
     serves: {
@@ -48,10 +48,10 @@ const recipeSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
-    category : {
-        type : [mongoose.Schema.ObjectId],
-        ref : 'category'
-    },
+    // category : {
+    //     type : [mongoose.Schema.ObjectId],
+    //     ref : 'category'
+    // },
     createdAt: {
         type: Date,
         default: Date.now()
@@ -59,3 +59,6 @@ const recipeSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('recipe',recipeSchema)
+
+
+// {"recipename":"Margherita Pizza","totalCookTime":"35 min","prepTime":"15 min","cookTime":"20 min","serves":"4","taste":"pungent","color":"red-yellowish","difficuiltyLevel":"2","state":"mahashtra","meals":"brunch/breakfast/Lunch","category":"foregin"}
